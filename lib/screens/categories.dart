@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:gluttonie/data/dummy_data.dart';
+import 'package:gluttonie/screens/meals.dart';
 import 'package:gluttonie/widget/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
+
+  void _selectCategory(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (ctx) =>
+            const MealsScreen(title: 'Available Meals', meals: dummyMeals)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,12 @@ class CategoriesScreen extends StatelessWidget {
         ),
         children: [
           for (final category in availableCategories)
-            CategoryGridItem(category: category)
+            CategoryGridItem(
+              category: category,
+              onSelectCategory: () {
+                _selectCategory(context);
+              },
+            )
         ],
       ),
     );
