@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gluttonie/data/dummy_data.dart';
-import 'package:gluttonie/screens/categories.dart';
-import 'package:gluttonie/screens/meals.dart';
+// import 'package:gluttonie/data/dummy_data.dart';
+// import 'package:gluttonie/screens/categories.dart';
+// import 'package:gluttonie/screens/meals.dart';
+import 'package:gluttonie/screens/tab.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -24,10 +25,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: theme,
-      home:
-          //  const MealsScreen(title: 'Some category', meals: dummyMeals),
-          const CategoriesScreen(),
-    );
+        theme: theme,
+        home:
+            //  const MealsScreen(title: 'Some category', meals: dummyMeals),
+            // const CategoriesScreen(),
+            const TabsScreen());
   }
 }
